@@ -335,10 +335,17 @@ sensor:
     - multiply: 0.1
     skip_updates: $skip_updates_slow
 
-
-#######################
-# BATTERY Data
-#######################
+  - platform: modbus_controller
+    name: "${device_name} Battery charged today"
+    address: 1056
+    register_type: "read"
+    unit_of_measurement: kWh
+    device_class: energy
+    icon: mdi:home-battery
+    value_type: U_DWORD
+    accuracy_decimals: 1
+    filters:
+    - multiply: 0.1
 
   - platform: modbus_controller
     name: "${device_name} Battery SOC"
