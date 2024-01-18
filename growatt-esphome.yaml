@@ -153,6 +153,16 @@ text_sensor:
         default: return std::string("Fault code: " + to_string(value));
       }
       return x;
+select:
+  - platform: modbus_controller
+    name: "${device_name} Allow AC Charging"
+    icon: mdi:battery-charging-100
+    address: 1092
+    value_type: U_WORD
+    optionsmap:
+      "Off": 0
+      "On": 1
+
 
 switch:
   - platform: restart
