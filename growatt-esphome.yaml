@@ -1,8 +1,8 @@
 substitutions:
   esphome_project_name: "LasseBang.GrowattControl"
-  esphome_project_version: "1.0.6"
+  esphome_project_version: "1.0.7"
 
-  name: "growatt"
+  name: "growatt-esphome"
   device_name: "Growatt" 
   device_description: "Growatt - ESPhome controller"
   modbus_controller_id: growatt
@@ -17,7 +17,7 @@ dashboard_import:
 
 esphome:
   name: ${name}
-  name_add_mac_suffix: True
+  name_add_mac_suffix: False
   project:
       name: $esphome_project_name
       version: $esphome_project_version
